@@ -1,0 +1,29 @@
+{
+  "name": "worldstock",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.jsx",
+  "scripts": {
+    "up": "npm upgrade && npm prune && npm dedupe",
+    "build": "webpack -p",
+    "start": "webpack-dev-server --hot --inline --color --config webpack.config.dev.js",
+    "push": "rsync -avz ./dist/ lion@alia.ml:/opt/worldstock/ --progress --delete",
+    "test": "jest",
+    "deploy": "npm run build && npm run push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmelion/worldstock.git"
+  },
+  "keywords": [
+    "World",
+    "stock",
+    "markets"
+  ],
+  "author": "Christhopher Lion <christhopherleao@icloud.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/itsmelion/worldstock/issues"
+  },
+  "homepage": "https://worldstock.ml"
+}

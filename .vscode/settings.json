@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    ".env.sample": "dotenv",
+    ".env.production": "dotenv",
+    ".env.default": "dotenv",
+    ".env.defaults": "dotenv",
+    ".env.example": "dotenv",
+    "env.example": "dotenv",
+    "env.sample": "dotenv",
+    ".stylelintrc": "json",
+    "*.jsx": "javascriptreact"
+  },
+}
