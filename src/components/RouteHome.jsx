@@ -1,8 +1,10 @@
 import React from 'react';
 import ListStocks from './ListStocks/ListStocks';
+import Search from './Search/Search';
 
-export const RouteHome = () => (
+const RouteHome = () => (
   <main>
+    <Search />
     <ListStocks />
   </main>
 );

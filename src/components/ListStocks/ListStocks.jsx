@@ -1,26 +1,15 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
 
 class ListStocks extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.API = process.env.API;
-    this.state = {
-      stocks: null,
-    };
-  }
 
-  componentWillMount() {
-    this.getTopStocks()
-      .then(stocks => this.setState(() => ({ stocks })));
-  }
-
-  getTopStocks() {
-    return fetch(`${this.API}/stock/market/collection/list?collectionName=in-focus`)
-      .then(response => response.json());
+  componentDidMount() {
+    this.props.fetchStocks();
   }
 
   render() {
-    const { stocks } = this.state;
+    const { stocks } = this.props;
     if (!stocks) return null;
 
     return (
@@ -31,5 +20,6 @@ class ListStocks extends PureComponent {
   }
 }
 
+const mapStateToProps = ({ stocks }) => ({ stocks });
 
-export default ListStocks;
+export default connect(mapStateToProps, actions)(ListStocks);
