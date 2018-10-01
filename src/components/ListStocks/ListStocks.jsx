@@ -14,9 +14,23 @@ class ListStocks extends PureComponent {
     if (!stocks) return null;
 
     return (
-      <ul id="ListStocks" className="column">
-        {stocks.map(({ companyName, symbol }) => (
-          <Link to={`/${symbol}`} key={symbol}>{companyName}</Link>
+      <ul className="contain column ListStocks">
+        {stocks.map(stock => (
+          <Link
+            to={`/${stock.symbol}`}
+            key={stock.symbol}
+            className="row mv1 stock"
+            align="between center"
+          >
+            <div>
+              <h5>{stock.companyName}</h5>
+              <sub>{stock.symbol}</sub>
+            </div>
+
+            <div>
+              <h5>${stock.latestPrice}</h5>
+            </div>
+          </Link>
         ))}
       </ul>
     );

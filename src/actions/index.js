@@ -1,7 +1,7 @@
 import { FETCH_STOCKS, FETCH_SYMBOLS } from './types';
 
 export async function fetchStocks() {
-  const URI = `${process.env.API}/stock/market/collection/list?collectionName=in-focus`;
+  const URI = `${process.env.API}/stock/market/collection/list?collectionName=in-focus&displayPercent=true`;
   const payload = await fetch(URI)
     .then(response => response.json());
 
