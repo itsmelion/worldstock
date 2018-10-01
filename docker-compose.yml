@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  worldstock:
+    build:
+      context: ./
+      args:
+        - NODE_ENV=development
+    env_file:
+      - ./.env
+    ports:
+      - 1667:3000
+    volumes:
+      - ./:/opt/worldstock
