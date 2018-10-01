@@ -1,2 +1,7 @@
 @import 'vars';
 @import '~flamework';
+
+html, body {
+  background-color: $background;
+  color: $white7;
+}

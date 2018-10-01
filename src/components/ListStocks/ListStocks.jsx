@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import * as actions from 'actions';
 
 class ListStocks extends PureComponent {
-
   componentDidMount() {
-    this.props.fetchStocks();
+    const { fetchStocks } = this.props;
+    fetchStocks();
   }
 
   render() {
