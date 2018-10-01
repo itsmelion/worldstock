@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
 
@@ -13,8 +14,10 @@ class ListStocks extends PureComponent {
     if (!stocks) return null;
 
     return (
-      <ul id="ListStocks">
-        {stocks.map(({ companyName, symbol }) => <li key={symbol}>{companyName}</li>)}
+      <ul id="ListStocks" className="column">
+        {stocks.map(({ companyName, symbol }) => (
+          <Link to={`/${symbol}`} key={symbol}>{companyName}</Link>
+        ))}
       </ul>
     );
   }

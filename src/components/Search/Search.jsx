@@ -39,12 +39,6 @@ class Search extends PureComponent {
     });
   }
 
-  componentDidUpdate() {
-    this.setState({
-      loading: false,
-    });
-  }
-
   searchStock = (value) => {
     const { symbols } = this.props;
     const name = value.toLowerCase();
