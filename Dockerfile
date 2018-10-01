@@ -13,7 +13,7 @@ ENV NODE_ENV $NODE_ENV
 WORKDIR /opt
 
 COPY package.json yarn.lock* *mod.js ./
-# ADD . /opt/worldstock
+
 RUN rm -rf node_modules && \
 npm cache verify && \
 npm install && \

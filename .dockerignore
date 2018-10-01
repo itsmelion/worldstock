@@ -2,3 +2,8 @@
 *Dockerfile*
 *docker-compose*
 node_modules
+dist
+build
+.tmp
+.vscode
+.DS_STORE
